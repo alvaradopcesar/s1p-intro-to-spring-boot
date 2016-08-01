@@ -5,6 +5,8 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
@@ -26,6 +28,11 @@ public class Application {
 			
 			repository.findAll().forEach(System.out::println);
 		};
+	}
+	
+	@Bean
+	public HealthIndicator springoneHealthIndicator() {
+		return () -> Health.up().withDetail("message", "Up and running").build();
 	}
 	
 }
