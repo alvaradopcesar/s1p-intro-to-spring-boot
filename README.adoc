@@ -1,0 +1,37 @@
+= SpringOne Platform - Intro to Spring Boot
+
+Run the following command to run the application: 
+
+[source, bash]
+----
+./mvnw spring-boot:run
+----
+
+[cols="1,1", options="header"]
+|===
+|User
+|Password
+
+|boot
+|abc123
+
+|cloud
+|abc123
+|===
+
+URLs:
+
+* http://localhost:8080/
+* http://localhost:8080/speakers
+* http://localhost:8080/metrics
+* http://localhost:8080/env
+* http://localhost:8080/health
+* http://localhost:8080/configprops
+
+
+NOTE: Migrate from jar to war. Check the branch `war`.
+
+[source, bash]
+----
+git branch war
+----
